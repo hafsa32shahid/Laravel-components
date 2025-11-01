@@ -36,6 +36,14 @@
         <h1 class="fw-bold my-5">Welcome To Dashboard , {{ $user['name'] }}</h1>
 
 
+
+        @if (!empty(session()->has('test')))
+        <pre>
+            {{ print_r(session()->forget('key'))}}
+        </pre>
+        @endif
+
+
     </div>
     </div>
 

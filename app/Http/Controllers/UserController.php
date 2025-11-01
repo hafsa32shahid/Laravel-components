@@ -68,13 +68,13 @@ class UserController extends Controller
     // login function will be here
 
     public function dashboard()
-    {
-        if (Auth::check()) {
-            return view('dashboard')->with('user', Auth::user());
-        } else {
-            return redirect()->route('login')
-                ->with(['status' => 'error', 'message' => "please login to access dashboard"]);
-        }
+    { 
+        // session(["test"=>"This is test session value"]);
+
+        // session()->flush();
+
+        return view('dashboard')->with('user', Auth::user());
+       
     }
 
     // logout function will be here
