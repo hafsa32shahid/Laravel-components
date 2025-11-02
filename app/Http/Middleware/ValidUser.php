@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Auth;
 use Closure;
+use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\HtmlString;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class ValidUser
     {
         echo "i run middleware";
         
-        if(Auth::check() && Auth::user()->role === "admin"){
+        if(Auth::user()->role === 'admin'){
              return $next($request);
         }else{
             return redirect()->route('login')

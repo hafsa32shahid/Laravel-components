@@ -18,7 +18,7 @@ Route::post('/user/login', [UserController::class, 'login_user'])->name('user.lo
 // ->middleware([ValidUser::class,TestUser::class]);//normal middleware
 
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')
-->middleware('ok-user');
+->middleware(ValidUser::class);
 
 // dashboard page
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

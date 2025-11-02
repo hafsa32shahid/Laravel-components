@@ -43,6 +43,16 @@
         </pre>
         @endif
 
+        <div class="d-flex align-items-center">
+            {{-- @if(Gate::allows('admin-only'))
+              <button class="btn btn-primary">Hello admin Update</button>
+            @endif --}}
+
+            {{-- @can('admin-only')
+            <button class="btn btn-primary">Hello admin Update</button>
+            @endcan --}}
+        </div>
+
 
     </div>
     </div>

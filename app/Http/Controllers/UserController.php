@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -73,7 +74,13 @@ class UserController extends Controller
 
         // session()->flush();
 
-        return view('dashboard')->with('user', Auth::user());
+         return view('dashboard')->with('user', Auth::user());
+    //    if(Gate::allows('admin-only')){
+    //      return view('dashboard')->with('user', Auth::user());
+    //    }else{
+    //         return redirect()->route('login')
+    //         ->with(['status' => 'error', 'message' => "You Are not elgigble for this page"]);
+    //    }
        
     }
 
